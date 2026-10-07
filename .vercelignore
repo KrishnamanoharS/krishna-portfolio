@@ -1,0 +1,6 @@
+# Files to exclude from Vercel static deployment
+server.js
+.git
+.github
+*.log
+process_avatar.py

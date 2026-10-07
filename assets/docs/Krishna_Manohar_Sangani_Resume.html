@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Krishna Manohar Sangani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --tag-bg: #eff6ff;
+      --tag-text: #1d4ed8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .resume-wrapper {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 48px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border);
+    }
+
+    .action-bar {
+      max-width: 850px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: #e2e8f0;
+      color: #1e293b;
+    }
+
+    .btn-secondary:hover {
+      background: #cbd5e1;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .sub-name {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .headline {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .contact-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dark);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
+    .summary-text {
+      font-size: 0.95rem;
+      color: #334155;
+      text-align: justify;
+    }
+
+    .entry {
+      margin-bottom: 18px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .entry-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .entry-subtitle {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .entry-meta {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .entry-desc {
+      font-size: 0.92rem;
+      color: #334155;
+      margin-top: 4px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .skill-category {
+      background: #f8fafc;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .skill-category-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    ul.clean-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 0.92rem;
+      color: #334155;
+    }
+
+    ul.clean-list li {
+      margin-bottom: 6px;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .resume-wrapper {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+      .action-bar {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="action-bar">
+    <a href="../../index.html" class="btn btn-secondary">← Back to Portfolio</a>
+    <button onclick="window.print()" class="btn btn-primary">🖨️ Print / Save as PDF</button>
+  </div>
+
+  <div class="resume-wrapper">
+    <header>
+      <h1>Krishna Manohar Sangani</h1>
+      <div class="sub-name">Full Name: Krishna Manohar Mahalakshmi Varma Sangani</div>
+      <div class="headline">Artificial Intelligence & Machine Learning Student | Python & Web Development Enthusiast</div>
+      <div class="contact-line">
+        <div class="contact-item">📧 Email: <a href="mailto:sanganikrishnamanohar@gmail.com" style="color: inherit; text-decoration: none;">sanganikrishnamanohar@gmail.com</a></div>
+        <div class="contact-item">📱 Phone: <a href="tel:+917981613899" style="color: inherit; text-decoration: none;">+91 7981613899</a></div>
+        <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/skrishnamanohar" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">linkedin.com/in/skrishnamanohar</a></div>
+        <div class="contact-item">💻 <a href="https://github.com/KrishnamanoharS" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">github.com/KrishnamanoharS</a></div>
+        <div class="contact-item">📍 India</div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary-text">
+        I am an Artificial Intelligence and Machine Learning student with an interest in software development, web technologies, Python, and data analytics. I enjoy building practical projects and improving my programming and problem-solving skills. I am looking for opportunities where I can apply my technical knowledge, learn new technologies, and contribute to real-world software projects.
+      </p>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Bachelor's Degree – Computer Science / CSM</span>
+          <span class="entry-meta">CGPA: 8.1</span>
+        </div>
+        <div class="entry-subtitle">Ideal Institute of Technology</div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Diploma – Electronics and Communication Engineering (ECE)</span>
+          <span class="entry-meta">Percentage: 87.3%</span>
+        </div>
+        <div class="entry-subtitle">Aditya Polytechnic College, Surampalem</div>
+        <div class="entry-desc" style="font-size: 0.9rem; color: #475569; margin-top: 4px;">
+          Branch: Electronics and Communication Engineering (ECE) | Aggregate: 87.3%
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">10th Class Secondary School Education</span>
+          <span class="entry-meta">Percentage: 83%</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical & Practical Projects</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">House Price Prediction</span>
+          <span class="entry-subtitle">Python, Pandas, NumPy, Matplotlib, HTML, CSS</span>
+        </div>
+        <p class="entry-desc">
+          Developed a house price prediction project using Python. Used Pandas and NumPy for data processing and analysis, and Matplotlib for data visualization. Created a simple HTML/CSS interface and applied data analysis concepts to a practical prediction problem.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-category-title">Programming Languages</div>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">C</span>
+            <span class="tag">Java Fundamentals</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Web Technologies</div>
+          <div class="skill-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Data & Visualization</div>
+          <div class="skill-tags">
+            <span class="tag">NumPy</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Matplotlib</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Database</div>
+          <div class="skill-tags">
+            <span class="tag">SQL</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Other & Tools</div>
+          <div class="skill-tags">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Computer Networking Fundamentals</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Areas of Interest</div>
+          <div class="skill-tags">
+            <span class="tag">Web Development</span>
+            <span class="tag">Data Analytics</span>
+            <span class="tag">AI / Machine Learning</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul class="clean-list">
+        <li><strong>Python Certification</strong> – Verified programming competency in core and applied Python.</li>
+        <li><strong>Full Stack / Frontend Certification</strong> – Web development, styling, and UI design foundations.</li>
+        <li><strong>Computer Networking Certification</strong> – Network topologies, protocols, and architectural models.</li>
+        <li><strong>Ethical Hacking Certification</strong> – Fundamental cybersecurity, network reconnaissance, and defense concepts.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Soft Skills</h2>
+      <div class="skill-tags" style="gap: 8px;">
+        <span class="tag">Problem Solving</span>
+        <span class="tag">Logical Thinking</span>
+        <span class="tag">Communication</span>
+        <span class="tag">Teamwork</span>
+        <span class="tag">Quick Learning</span>
+        <span class="tag">Time Management</span>
+        <span class="tag">Adaptability</span>
+        <span class="tag">Attention to Detail</span>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
